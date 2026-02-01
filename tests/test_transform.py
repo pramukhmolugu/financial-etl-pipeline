@@ -59,10 +59,11 @@ class TestDataTransformer:
         """Test data type validation"""
         result = transformer._validate_data_types(sample_dirty_data)
         
-        # Check data types
-        assert result['transaction_date'].dtype == 'datetime64[ns]'
+        # Check data types (pandas 3.0 uses 'us' instead of 'ns')
+        assert str(result['transaction_date'].dtype).startswith('datetime64')
         assert pd.api.types.is_numeric_dtype(result['amount'])
-        assert result['status'].dtype == 'object'
+        # Pandas 3.0 returns StringDtype which shows as 'str'
+        assert result['status'].dtype == 'object' or 'str' in str(result['status'].dtype).lower()
     
     def test_apply_business_rules_removes_negative_amounts(self, transformer):
         """Test that negative amounts are removed"""

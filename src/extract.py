@@ -43,7 +43,7 @@ class DataExtractor:
             'transaction_id': [f'TXN{i:08d}' for i in range(num_records)],
             'customer_id': [f'CUST{np.random.randint(1, 5000):06d}' for _ in range(num_records)],
             'transaction_date': [
-                datetime.now() - timedelta(days=np.random.randint(0, 365))
+                datetime.now() - timedelta(days=int(np.random.randint(0, 365)))
                 for _ in range(num_records)
             ],
             'amount': np.random.lognormal(mean=4, sigma=1.5, size=num_records).round(2),
@@ -72,9 +72,10 @@ class DataExtractor:
         null_indices = np.random.choice(df.index, size=int(num_records * 0.02), replace=False)
         df.loc[null_indices, 'amount'] = np.nan
         
-        # 1% duplicate transaction IDs
-        dup_indices = np.random.choice(df.index[100:], size=int(num_records * 0.01), replace=False)
-        df.loc[dup_indices, 'transaction_id'] = df.loc[dup_indices - 100, 'transaction_id'].values
+        # 1% duplicate transaction IDs (only if we have enough records)
+        if num_records > 100:
+            dup_indices = np.random.choice(df.index[100:], size=int(num_records * 0.01), replace=False)
+            df.loc[dup_indices, 'transaction_id'] = df.loc[dup_indices - 100, 'transaction_id'].values
         
         # Save raw data
         output_file = self.output_dir / f'raw_transactions_{datetime.now().strftime("%Y%m%d_%H%M%S")}.csv'
@@ -102,7 +103,7 @@ class DataExtractor:
             'customer_id': [f'CUST{i:06d}' for i in range(1, num_records + 1)],
             'customer_name': [f'Customer {i}' for i in range(1, num_records + 1)],
             'registration_date': [
-                datetime.now() - timedelta(days=np.random.randint(0, 1825))
+                datetime.now() - timedelta(days=int(np.random.randint(0, 1825)))
                 for _ in range(num_records)
             ],
             'customer_tier': np.random.choice(
