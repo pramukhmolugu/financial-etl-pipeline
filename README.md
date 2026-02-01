@@ -7,7 +7,7 @@
 
 A production-ready ETL (Extract, Transform, Load) pipeline for processing financial transaction data with comprehensive automated testing, data quality validation, and monitoring capabilities.
 
-## 🎯 Project Overview
+##  Project Overview
 
 This project demonstrates enterprise-level data engineering practices including:
 
@@ -23,7 +23,7 @@ This project demonstrates enterprise-level data engineering practices including:
 - ✅ **Audit logging** for compliance and monitoring
 - ✅ **Performance optimization** with proper indexing
 
-## 🏗️ Architecture
+##  Architecture
 
 ```
 ┌─────────────┐     ┌──────────────┐     ┌─────────────┐
@@ -42,7 +42,7 @@ This project demonstrates enterprise-level data engineering practices including:
                     └────────────────┘
 ```
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Prerequisites
 
@@ -73,7 +73,7 @@ docker-compose up -d
 python src/pipeline.py --transactions 5000 --customers 2500
 ```
 
-## 📊 Features
+##  Features
 
 ### Extract Module
 - Synthetic data generation for testing
@@ -102,7 +102,7 @@ python src/pipeline.py --transactions 5000 --customers 2500
 - **Code Coverage**: 85%+ coverage target
 - **CI/CD**: Automated testing on every commit
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 financial-etl-pipeline/
@@ -125,7 +125,7 @@ financial-etl-pipeline/
 └── docker-compose.yml      # PostgreSQL setup
 ```
 
-## 🧪 Running Tests
+##  Running Tests
 
 ```bash
 # Run all unit tests
@@ -144,7 +144,7 @@ python src/transform.py
 python tests/great_expectations/test_ge_validation.py
 ```
 
-## 📈 Performance
+##  Performance
 
 -  Throughput: 10,000+ records/minute
 - **Success Rate**: 97%+ after transformation
@@ -152,7 +152,7 @@ python tests/great_expectations/test_ge_validation.py
 - **Latency**: < 15 seconds for 10K records
 
 
-## 📈 Project Metrics
+##  Project Metrics
 
 | Metric | Value |
 |--------|-------|
@@ -164,7 +164,7 @@ python tests/great_expectations/test_ge_validation.py
 | **Build Time** | < 3 minutes |
 | **Throughput** | 10,000+ records/minute |
 
-## 🎓 Learning Outcomes
+##  Learning Outcomes
 
 This project demonstrates proficiency in:
 
@@ -177,7 +177,7 @@ This project demonstrates proficiency in:
 - ✅ **Database Design** - PostgreSQL optimization, indexing strategies
 - ✅ **Production Monitoring** - Audit logging, quality metrics
 
-## 💼 Interview Talking Points
+##  Interview Talking Points
 
 ### Technical Depth
 - "Implemented Great Expectations for enterprise data quality validation"
@@ -197,7 +197,7 @@ This project demonstrates proficiency in:
 - "Infrastructure as Code ensures reproducible deployments"
 - "Monitoring and alerting for proactive issue detection"
 
-## 🛠️ Technologies
+##  Technologies
 
 | Category | Technologies |
 |----------|-------------|
@@ -208,7 +208,7 @@ This project demonstrates proficiency in:
 | **Data Processing** | Pandas, NumPy, SQLAlchemy |
 | **Containerization** | Docker, Docker Compose |
 
-## 📊 Database Schema
+##  Database Schema
 
 ### **Fact Table**: `fact_transactions`
 - Primary Key: `transaction_id`
@@ -226,7 +226,7 @@ This project demonstrates proficiency in:
 - Tracks: pipeline execution, record counts, quality reports
 - Storage: Quality reports stored as JSONB
 
-## 🔍 Data Quality Checks
+##  Data Quality Checks
 
 The pipeline includes automated quality validation:
 
@@ -237,7 +237,7 @@ The pipeline includes automated quality validation:
 5. **Consistency**: Status values in valid set
 6. **Timeliness**: Data within expected date ranges
 
-## 🚀 Usage Examples
+##  Usage Examples
 
 ### Basic Pipeline Execution (no Docker needed)
 ```bash
@@ -267,15 +267,14 @@ results = loader.run_quality_checks('sql/quality_checks.sql')
 print(results)
 ```
 
-## 👤 Author
+##  Author
 
 **Pramukh Molugu**  
 Data Engineer | 8+ Years Experience
 
-- 📧 Email: pramukhmolugu@gmail.com
 - 🔗 [GitHub](https://github.com/pramukhmolugu)
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - Built as a portfolio project demonstrating production-grade ETL development
 - Showcases best practices in data engineering, testing, and automation
