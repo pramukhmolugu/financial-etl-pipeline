@@ -17,6 +17,9 @@ This project demonstrates enterprise-level data engineering practices including:
 - ✅ **Automated testing** with PyTest (21+ tests)
 - ✅ **Data quality validation** with Great Expectations
 - ✅ **CI/CD pipeline** with GitHub Actions
+- ✅ **Apache Airflow orchestration** for production scheduling
+- ✅ **AWS serverless integration** (Lambda, S3)
+- ✅ **Infrastructure as Code** with Terraform
 - ✅ **Audit logging** for compliance and monitoring
 - ✅ **Performance optimization** with proper indexing
 
